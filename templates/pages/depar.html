@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Solutions</title>
+    <!-- FontAwesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Cairo", serif;
+            background: url("/static/image/4.jpg") no-repeat center center/cover;
+            height: 100vh;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* ضبط المحتوى ليكون في منتصف الصفحة */
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* إضافة طبقة داكنة */
+            z-index: -1; /* جعل الخلفية خلف المحتوى */
+        }
+
+        /* Navbar ثابتة في الأعلى */
+        .navbar-custom {
+            background-color: #383838;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+            position: fixed; /* navbar ثابتة في الأعلى */
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10; /* لضمان ظهور navbar فوق كل المحتوى */
+        }
+
+        .navbar-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+        }
+
+        .navbar-home-link {
+            display: flex;
+            align-items: center;
+            font-size: 1.2em;
+            color: #fff;
+            text-decoration: none;
+            direction: rtl;
+        }
+
+        .navbar-home-link i {
+            margin-right: 1.5em;
+            margin-left: 1.5em;
+            font-size: 1.5em;
+        }
+
+        /* تباعد المحتوى بعد navbar */
+        .container {
+            text-align: center;
+            width: 90%;
+            margin-top: 120px; /* إضافة تباعد للمحتوى بعد navbar */
+        }
+
+        .heading {
+            text-align: center;
+            direction: rtl;
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .heading::after {
+            direction: ltr;
+            display: inline;
+        }
+
+        .subheading {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #e0e0e0;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #FFD700;
+            border-radius: 8px;
+            padding: 20px;
+            width: 180px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .details-container {
+            margin-top: 30px;
+            padding: 20px;
+            width: 80%;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .details-container p {
+            font-size: 1rem;
+            color: #e0e0e0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design Adjustments */
+        @media (max-width: 576px) {
+            .heading {
+                font-size: 2rem;
+            }
+
+            .subheading {
+                font-size: 1rem;
+            }
+
+            .card-container {
+                justify-content: center;
+            }
+
+            .card {
+                width: 160px;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar-custom">
+        <div class="navbar-title">اقـسام الشـركة</div>
+        <a href="{% url 'index' %}" class="navbar-home-link">
+            <i class="fas fa-home"> الصفحة الرئيسية</i>
+        </a>
+    </nav>
+    <div class="container">
+        <div class="heading">الأقسام الخاصة بشركة 3thec</div>
+        <div class="subheading">تتضمن أقسام الشركة مجموعة من الأهدافه الاستراتيجية وتقديم الخدمات المتميزة للعملاء والموظفين </div>
+        <div class="card-container">
+            <div class="card" onclick="showDetails('details1')">
+                <div class="icon"><i class="fas fa-users"></i></div>
+                <div class="card-title">الشؤون العامة</div>
+            </div>
+            <div class="card" onclick="showDetails('details2')">
+                <div class="icon"><i class="fas fa-bullseye"></i></div>
+                <div class="card-title">التسويق والإعلان</div>
+            </div>
+            <div class="card" onclick="showDetails('details3')">
+                <div class="icon"><i class="fas fa-file-alt"></i></div>
+                <div class="card-title">الشؤون القانونية</div>
+            </div>
+            <div class="card" onclick="showDetails('details4')">
+                <div class="icon"><i class="fas fa-gem"></i></div>
+                <div class="card-title">الشؤون المالية</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="details1" class="details-container">
+        <p>يتعامل قسم الشؤون العامة مع جميع الأنشطة المتعلقة بإدارة العلاقات العامة، والتنسيق مع الهيئات الحكومية والشركات الأخرى. يهدف إلى تعزيز سمعة الشركة وتحقيق أهدافها الاستراتيجية</p>
+    </div>
+    <div id="details2" class="details-container">
+        <p>يعنى قسم التسويق والإعلان بتخطيط وتنفيذ استراتيجيات الترويج للمنتجات والخدمات. يهدف إلى زيادة الوعي بالعلامة التجارية وجذب العملاء الجدد من خلال الحملات التسويقية المتنوعة</p>
+    </div>
+    <div id="details3" class="details-container">
+        <p>يهتم قسم الشؤون القانونية بتقديم الاستشارات القانونية للشركة وحمايتها من المخاطر القانونية. يتعامل مع العقود، النزاعات القانونية، وحقوق الملكية الفكرية</p>
+    </div>
+    <div id="details4" class="details-container">
+        <p>يختص قسم الشؤون المالية بإدارة العمليات المالية للمؤسسة مثل إعداد الميزانيات، التحليل المالي، وإدارة التدفقات النقدية. يساهم هذا القسم في ضمان الاستدامة المالية للشركة</p>
+    </div>
+
+    <script>
+        function showDetails(id) {
+            // Hide all detail sections
+            const allDetails = document.querySelectorAll('.details-container');
+            allDetails.forEach(detail => detail.style.display = 'none');
+
+            // Toggle the selected detail section
+            const selectedDetail = document.getElementById(id);
+            if (selectedDetail.style.display === 'block') {
+                selectedDetail.style.display = 'none';
+            } else {
+                selectedDetail.style.display = 'block';
+            }
+        }
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

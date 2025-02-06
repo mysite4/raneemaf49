@@ -1,0 +1,35 @@
+<!-- إضافة رابط Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- add_team_member.html -->
+<h2 class="text-center my-4 text-primary">إضافة عضو جديد</h2>
+
+<form method="POST" enctype="multipart/form-data" class="container p-4 rounded border shadow-lg" style="background-color: #f9f9f9;">
+    {% csrf_token %}
+    <!-- إدخال الاسم -->
+    <div class="mb-3">
+        <label for="name" class="form-label">الاسم:</label>
+        <input type="text" name="name" class="form-control" id="name" required style="border-color: #007bff;">
+    </div>
+
+    <!-- إدخال الدور -->
+    <div class="mb-3">
+        <label for="role" class="form-label">الدور:</label>
+        <input type="text" name="role" class="form-control" id="role" required style="border-color: #007bff;">
+    </div>
+
+    <!-- إدخال الصورة -->
+    <div class="mb-3">
+        <label for="image" class="form-label">الصورة:</label>
+        <input type="file" name="image" class="form-control" id="image" required style="border-color: #007bff;">
+    </div>
+
+    <!-- زر الإرسال -->
+    <button type="submit" class="btn btn-success w-100" style="background-color: #28a745; border: none;">إضافة</button>
+</form>
+
+<!-- رابط للعودة إلى لوحة التحكم -->
+<a href="{% url 'dashboard' %}" class="btn btn-secondary mt-3 d-block mx-auto" style="width: 200px; background-color: #6c757d; border: none;">الرجوع إلى لوحة التحكم</a>
+
+<!-- إضافة سكربت Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
