@@ -1,0 +1,12 @@
+{% load static %}
+
+{% block content %}
+
+{% for x in serv %}
+
+<H1> {{x.name}} </H1>
+<H1> {{x.content}} </H1>
+
+{% endfor %}
+
+{% endblock content %}

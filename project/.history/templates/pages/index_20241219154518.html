@@ -1,0 +1,396 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- رابط Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- رابط خط Cairo -->
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+        
+        <!-- رابط Font Awesome للأيقونات -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
+        <!-- ملفات JavaScript و CSS الخاصة بالمشروع -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+        
+        <title>شركة البرمجيات</title>
+    </head>
+    
+<body>
+    <!-- header start-->
+    <header class="bg-dark text-white custom-header">
+        <div class="custom-container position-relative">
+            <div class="d-flex justify-content-between align-items-center py-4">
+                <img src="{% static 'image/logo.png' %}" alt="software company logo" width="50">
+                <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav ms-auto">
+                          <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">الرئيسية</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#about">عنا</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#callery">المعرض</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#services">خدماتنا</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{% url 'depar' %}">اقسامنا</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{% url 'Contactus' %}">اتصل بنا</a></li>
+                      </ul>
+                  </div>
+              </nav>
+              
+            </div>
+            <div class="content text-center py-5">
+                <h1 id="tech-title" style="font-family: 'Great Vibes', cursive;">3Tech</h1>
+                <h1 id="secondary-title">مرحبا بك في الشركة الخاصة بنا, سعداء بلقائك </h1>
+                <a href="{% url 'history' %}" class="btn custom-btn-primary">المــسـيـرة الـمهـنيـة</a>
+            </div>
+        </div>
+    </header>
+    <!-- header end-->
+    
+    <!-- main start -->
+    <main>
+        <section id="about" class="py-5">
+            <div class="custom-container">
+                <div class="text-center mb-5">
+                    <h2>من نحن ؟</h2>
+                    <p>اكثر من 10+ سنين من الخبرة</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>
+                    شركة متخصصة في تطوير البرمجيات وتقديم حلول تقنية مبتكرة تساعد الشركات والأفراد على تحقيق أهدافهم. منذ تأسيسنا، ونحن ملتزمون بتقديم أعلى معايير الجودة والابتكار في كل مشروع نتولاه. نعمل مع فريق متكامل من المطورين والمصممين والمهندسين الذين يتمتعون بخبرة عميقة وشغف بالتكنولوجيا، ما يمكننا من تقديم حلول تلبي احتياجات السوق المتغيرة.شركة متخصصة في تطوير البرمجيات وتقديم حلول تقنية مبتكرة تساعد الشركات والأفراد على تحقيق أهدافهم. منذ تأسيسنا، ونحن ملتزمون بتقديم أعلى معايير الجودة والابتكار في كل مشروع نتولاه. نعمل مع فريق متكامل من المطورين والمصممين والمهندسين الذين يتمتعون بخبرة عميقة وشغف بالتكنولوجيا، ما يمكننا من تقديم حلول تلبي احتياجات السوق المتغيرة.</p>
+                        <a href="{% url 'about' %}" class="btn custom-btn-secondary">المزيد</a>
+                    </div>
+                    <div class="col-md-6 image-grid">
+                        <div class="row">
+                            <div class="col-6 image-item"><img src="{% static 'image/1.jpg' %}" alt="Image 1" class="img-fluid rounded"></div>
+                            <div class="col-6 image-item"><img src="{% static 'image/2.jpg' %}" alt="Image 2" class="img-fluid rounded"></div>
+                            <div class="col-6 image-item"><img src="{% static 'image/4.jpg' %}" alt="Image 3" class="img-fluid rounded"></div>
+                            <div class="col-6 image-item"><img src="{% static 'image/3.jpg' %}" alt="Image 4" class="img-fluid rounded"></div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="text-center mb-5">
+          <h2>خدماتنا</h2>
+          <p>نـقدم لك افـضل الـخدمـات فـي مـجال الـتقنيـة </p>
+      </div>
+        <!-- Card Items -->
+        <div class="col-md-4 card-item">
+          <div class="card border-0 shadow-sm p-3">
+            <a href="your-link-here" class="card-link">
+            <div class="card-icon">
+              <i class="bi bi-laptop" style="color: #ffa31a;"></i>
+            </div>
+            <h5 class="card-title">تطوير وتصميم الأنظمة البرمجية</h5>
+          </div>
+        </a>
+        </div>
+        <div class="col-md-4 card-item">
+          <div class="card border-0 shadow-sm p-3">
+            <a href="your-link-here" class="card-link">
+            <div class="card-icon">
+              <i class="bi bi-phone" style="color: #ffa31a;"></i>
+            </div>
+            <h5 class="card-title">تسويق المنتجات التكنولوجية</h5>
+          </div>
+        </a>
+        </div>
+        <div class="col-md-4 card-item">
+          <div class="card border-0 shadow-sm p-3">
+            <a href="your-link-here" class="card-link">
+              <!-- أيقونة البطاقة -->
+              <div class="card-icon">
+                <i class="bi bi-laptop" style="color: #ffa31a;"></i>
+              </div>
+              <!-- عنوان البطاقة -->
+              <h5 class="card-title">التـدريب المتخصص</h5>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Additional Hidden Cards -->
+        <div class="col-md-4 card-item d-none">
+          <div class="card border-0 shadow-sm p-3">
+            <a href="your-link-here" class="card-link">
+            <div class="card-icon">
+              <i class="bi bi-router" style="color: #ffa31a;"></i>
+            </div>
+            <h5 class="card-title">إنشاء مستودعات البيانات</h5>
+          </div>
+        </a>
+        </div>
+        <div class="col-md-4 card-item d-none">
+          <div class="card border-0 shadow-sm p-3">
+            <a href="your-link-here" class="card-link">
+            <div class="card-icon">
+              <i class="bi bi-code-slash" style="color: #ffa31a;"></i>
+            </div>
+            <h5 class="card-title">الاستشارات التقنية والدراسات</h5>
+          </div>
+        </a>
+        </div>
+        <div class="col-md-4 card-item d-none">
+          <div class="card border-0 shadow-sm p-3">
+            <a href="your-link-here" class="card-link">
+            <div class="card-icon">
+              <i class="bi bi-cloud" style="color: #ffa31a;"></i>
+            </div>
+            <h5 class="card-title">التدقيق والفحص التكنولوجي</h5>
+          </div>
+        </a>
+        </div>
+        <div class="col-md-4 card-item d-none">
+          <div class="card border-0 shadow-sm p-3">
+            <a href="your-link-here" class="card-link">
+            <div class="card-icon">
+              <i class="bi bi-database" style="color: #ffa31a;"></i>
+            </div>
+            <h5 class="card-title">بناء وتنفيذ المشاريع الرقمية</h5>
+          </div>
+        </a>
+        </div>
+        <div class="col-md-4 card-item d-none">
+          <div class="card border-0 shadow-sm p-3">
+            <a href="bi bi-shield-lock" class="card-link">
+            <div class="card-icon">
+              <i class="bi bi-lightning" style="color: #ffa31a;" ></i>
+            </div>
+            <h5 class="card-title">تسويق رقمي شامل</h5>
+          </div>
+        </a>
+        </div>
+        <div class="col-md-4 card-item d-none">
+          <div class="card border-0 shadow-sm p-3">
+            <a href="your-link-here" class="card-link">
+            <div class="card-icon">
+              <i class="bi bi-broadcast" style="color: #ffa31a;"></i>
+            </div>
+            <h5 class="card-title">خدمات متكاملة في الذكاء الاصطناعي</h5>
+          </div>
+        </a>
+        </div>
+        <!-- Add more cards as needed -->
+      </div>
+      <button id="viewMoreBtn" class="btn btn-primary mt-4">View More</button>
+    </div>
+    <!--our work-->
+    <section class="about-section py-5">
+      <div class="container">
+          <div class="text-center mb-4">
+              <h2 class="fw-bold">تعلم المزيد عن اعمالنا</span></h2>
+          </div>
+          <div class="row align-items-center">
+              <!-- الجزء الأيمن (كان يسارًا سابقًا) -->
+              <div class="col-lg-6">
+                  <div class="row g-4">
+                      <div class="col-md-6 text-center">
+                          <div>
+                              <i class="bi bi-briefcase-fill icon"></i>
+                              <h5 class="fw-bold mt-3">مع المصارف</h5>
+                              <p class="text-muted">حلولاً متكاملة في مجال الأمن السيبراني وأنظمة الدفع الإلكتروني</p>
+                          </div>
+                      </div>
+                      <div class="col-md-6 text-center">
+                          <div>
+                              <i class="bi bi-gem icon"></i>
+                              <h5 class="fw-bold mt-3">مع شركات النفط </h5>
+                              <p class="text-muted">أنظمة تقنية لإدارة البيانات وتحليلها </p>
+                          </div>
+                      </div>
+                      <div class="col-md-6 text-center">
+                          <div>
+                              <i class="bi bi-wifi icon"></i>
+                              <h5 class="fw-bold mt-3"> عبر الانترنت</h5>
+                              <p class="text-muted"> خدمات متقدمة في إنشاء مواقع إلكترونية، التجارة الإلكترونية، والحلول السحابية</p>
+                          </div>
+                      </div>
+                      <div class="col-md-6 text-center">
+                          <div>
+                              <i class="bi bi-easel icon"></i>
+                              <h5 class="fw-bold mt-3"> مع الشركات الخاصة</h5>
+                              <p class="text-muted"> تطوير منصات وتطبيقات مبتكرة </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 mb-4" style="direction: rtl; line-height: 5;">
+                  <h3 class="fw-bold">الاعمال المستهدفة في شركتنا</h3>
+                  <h6>
+                    "في عالم يتسارع فيه التطور التكنولوجي بشكل مذهل، نكرّس جهودنا في شركتنا لتقديم حلول تقنية مبتكرة تُحدث فرقًا حقيقيًا في حياة عملائنا وأعمالهم. نفخر بقدرتنا على الدمج بين الإبداع والمعرفة العميقة لنصمم حلولًا مخصصة تلبي احتياجات كل عميل على حدة. من تطوير البرمجيات الذكية والتطبيقات الحديثة إلى توفير خدمات التحول الرقمي، نعمل بشغف على تمكين الشركات والأفراد من استغلال الإمكانات الكاملة للتكنولوجيا. كل مشروع ننجزه يعكس التزامنا بالجودة، ودقتنا في التفاصيل، ورؤيتنا المستقبلية. نحن هنا لنرتقي بأعمالك إلى آفاق جديدة من النجاح، ولنبني معًا مستقبلًا قائمًا على الابتكار والإبداع."
+                  </h6>
+              </div>
+          </div>
+      </div>
+  </section>
+  <div class="circular-progress">
+    <div class="container">
+        <!-- دائرة شريك -->
+        <div class="progress-circle" id="circle-sharik" data-value="{{ progress.شــريك }}" data-label="شــريك"></div>
+        <!-- دائرة موظف -->
+        <div class="progress-circle" id="circle-muwazaf" data-value="{{ progress.مـوظف }}" data-label="مـوظف"></div>
+        <!-- دائرة عميل -->
+        <div class="progress-circle" id="circle-ameel" data-value="{{ progress.عـمـيل }}" data-label="عـمـيل"></div>
+        <!-- دائرة عمل -->
+        <div class="progress-circle" id="circle-amal" data-value="{{ progress.عــمل }}" data-label="عــمل"></div>
+    </div>
+</div>
+        <!-- قسم شريط الصورة مع نظام الأعمدة والصفوف -->
+        <section id="callery" class="image-banner">
+            <div class="container-fluid p-0">
+                <div class="row no-gutters">
+                    <!-- العمود الذي يحتوي على الفيديو -->
+                    <div class="col-12 p-0">
+                        <video class="video-background" autoplay muted loop>
+                            <source src="{% static 'image/video.mp4' %}" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="overlay">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 text-center">
+                            <h2>مرحبًا بك في معرض الشركة الخاص بنا</h2>
+                            <p>هنا تجد لمحة أو نبذة مبسطة عن شركتنا</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Carousel Slider -->
+<div id="newsCarousel" class="carousel slide" data-bs-ride="carousel" style="position: relative; height: 100vh; background: url('{{ background_image_url }}') no-repeat center center/cover;">
+    <div class="carousel-inner" style="height: 100%; display: flex; align-items: center; justify-content: center;">
+
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <!-- محتوى الخبر -->
+            <div class="text-center text-white" style="background: rgba(0, 0, 0, 0.5); padding: 30px; border-radius: 10px;">
+                <!-- صورة الكاتب -->
+                <img src="{{ post.author.profile_picture.url }}" alt="{{ post.author.username|default:'غير معروف' }}" 
+                     class="mb-3 rounded-circle" style="width: 100px; height: 100px; border: 2px solid #fff;">
+                <!-- اسم الكاتب -->
+                <h5 class="mb-2">{{ post.author.username|default:'غير معروف' }}</h5>
+                <!-- عنوان الخبر -->
+                <h2 class="mb-3">{{ post.title }}</h2>
+                <!-- النص -->
+                <p class="lead">{{ post.body|truncatechars:120 }}</p>
+                <!-- التقييم -->
+                <div class="rating">
+                    <span style="color: gold;">
+                        {% for i in range_5 %}
+                            <i class="star {% if post.rating > i %}filled{% endif %}">★</i>
+                        {% endfor %}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <!-- أزرار التنقل -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<div class="container my-5">
+  <div id="teamCarousel" class="carousel slide team-carousel" data-bs-ride="carousel">
+      <div class="carousel-inner">
+          <!-- أعضاء الفريق -->
+          <div class="carousel-item active">
+              <div class="team-member">
+                  <img src="member1.jpg" alt="Member 1">
+                  <h5>الاسم 1</h5>
+                  <p>الوظيفة 1</p>
+              </div>
+          </div>
+          <div class="carousel-item">
+              <div class="team-member">
+                  <img src="member2.jpg" alt="Member 2">
+                  <h5>الاسم 2</h5>
+                  <p>الوظيفة 2</p>
+              </div>
+          </div>
+          <div class="carousel-item">
+              <div class="team-member">
+                  <img src="member3.jpg" alt="Member 3">
+                  <h5>الاسم 3</h5>
+                  <p>الوظيفة 3</p>
+              </div>
+          </div>
+          <!-- أضف المزيد حسب الحاجة -->
+      </div>
+      <!-- الأسهم -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">السابق</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">التالي</span>
+      </button>
+  </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+      <div class="row">
+        <!-- القسم الأيمن: معلومات عن الشركة -->
+        <div class="col-md-4 footer-about"> 
+          <h4>عن الشركة</h4>
+          <p>
+            نحن في شركة <b>التقنيات الثلاثة</b> نسعى لتقديم أحدث الحلول التقنية لضمان نجاح عملائنا.
+            هدفنا هو الابتكار والتميز في مجال التكنولوجيا.
+          </p>
+        </div>
+        <!-- القسم الأوسط: روابط سريعة -->
+        <div class="col-md-4 footer-links text-center">
+          <h4>روابط مفيدة</h4>
+          <ul class="footer-nav">
+            <li><a href="#about">عنا</a></li>
+            <li><a href="#services">الخدمات</a></li>
+            <li><a href="#gallery">المعرض</a></li>
+            <li><a href="#contact">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <!-- القسم الأيسر: معلومات التواصل -->
+        <div class="col-md-4 footer-contact text-end">
+          <h4>تواصل معنا</h4>
+          <ul class="contact-info">
+            <li><i class="fas fa-map-marker-alt"></i> العنوان: طرابلس، ليبيا</li>
+            <li><i class="fas fa-phone"></i> الهاتف: +218-23-12347767</li>
+            <li><i class="fas fa-envelope"></i> البريد: info@3tec.com</li>
+          </ul>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- النص السفلي -->
+      <div class="footer-bottom text-center">
+        <p>© 2024 جميع الحقوق محفوظة - شركة التقنيات الثلاثة</p>
+      </div>
+    </div>
+  </footer>
+  <script src="{% static 'js/index1.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
+

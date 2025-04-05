@@ -1,0 +1,470 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- رابط Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- رابط خط Cairo -->
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+        <!-- رابط Font Awesome للأيقونات -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
+        <!-- ملفات JavaScript و CSS الخاصة بالمشروع -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+        
+        <title>شركة البرمجيات</title>
+    </head>
+    
+<body>
+  <header class="custom-header">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <!-- الشعار -->
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'image/logo.png' %}" alt="logo" width="50">
+            </a>
+            <!-- قائمة التنقل -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">عنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">خدماتنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#work">اعمالنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#depar">اقسامنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="custom-container content">
+        <h1 id="tech-title">3Tech</h1>
+        <h1 id="secondary-title">مرحبا بك في شركتنا، سعداء بلقائك</h1>
+        <a href="{% url 'Contactus' %}" class="btn custom-btn-primary">اتـصـل بـنا</a>
+    </div>
+</header>
+
+    
+    <!-- main start -->
+    <main>
+        <section id="about" class="py-5">
+            <div class="custom-container">
+                <div class="text-center mb-5">
+                    <h2>من نحن ؟</h2>
+                    <p>اكثر من 10+ سنين من الخبرة</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>
+                    شركة متخصصة في تطوير البرمجيات وتقديم حلول تقنية مبتكرة تساعد الشركات والأفراد على تحقيق أهدافهم. منذ تأسيسنا، ونحن ملتزمون بتقديم أعلى معايير الجودة والابتكار في كل مشروع نتولاه. نعمل مع فريق متكامل من المطورين والمصممين والمهندسين الذين يتمتعون بخبرة عميقة وشغف بالتكنولوجيا، ما يمكننا من تقديم حلول تلبي احتياجات السوق المتغيرة.شركة متخصصة في تطوير البرمجيات وتقديم حلول تقنية مبتكرة تساعد الشركات والأفراد على تحقيق أهدافهم. منذ تأسيسنا، ونحن ملتزمون بتقديم أعلى معايير الجودة والابتكار في كل مشروع نتولاه. نعمل مع فريق متكامل من المطورين والمصممين والمهندسين الذين يتمتعون بخبرة عميقة وشغف بالتكنولوجيا، ما يمكننا من تقديم حلول تلبي احتياجات السوق المتغيرة.</p>
+                        <a href="{% url 'about' %}" class="btn custom-btn-secondary">المزيد</a>
+                    </div>
+                    <div class="col-md-6 image-grid">
+                        <div class="row">
+                            <div class="col-6 image-item"><img src="{% static 'image/1.jpg' %}" alt="Image 1" class="img-fluid rounded"></div>
+                            <div class="col-6 image-item"><img src="{% static 'image/2.jpg' %}" alt="Image 2" class="img-fluid rounded"></div>
+                            <div class="col-6 image-item"><img src="{% static 'image/4.jpg' %}" alt="Image 3" class="img-fluid rounded"></div>
+                            <div class="col-6 image-item"><img src="{% static 'image/3.jpg' %}" alt="Image 4" class="img-fluid rounded"></div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+    <div id="services" class="container py-5">
+      <div class="row g-4">
+        <div class="text-center mb-5">
+          <h2>خدماتنا</h2>
+          <p>نـقدم لك افـضل الـخدمـات فـي مـجال الـتقنيـة </p>
+      </div>
+        <!-- Card Items -->
+        <div class="col-md-4 card-item">
+          <div class="card border-0 shadow-sm p-3">
+            <a href="{% url 'services1' %}" class="card-link">
+            <div class="card-icon">
+              <i class="bi bi-laptop" style="color: #ffa31a;"></i>
+            </div>
+            <h5 class="card-title">تطوير وتصميم الأنظمة البرمجية</h5>
+          </div>
+        </a>
+        </div>
+        <div class="col-md-4 card-item">
+          <div class="card border-0 shadow-sm p-3">
+            <a href="{% url 'services2' %}" class="card-link">
+            <div class="card-icon">
+              <i class="bi bi-phone" style="color: #ffa31a;"></i>
+            </div>
+            <h5 class="card-title">تسويق المنتجات التكنولوجية</h5>
+          </div>
+        </a>
+        </div>
+        <div class="col-md-4 card-item">
+          <div class="card border-0 shadow-sm p-3">
+            <a href="{% url 'services3' %}" class="card-link">
+              <!-- أيقونة البطاقة -->
+              <div class="card-icon">
+                <i class="bi bi-laptop" style="color: #ffa31a;"></i>
+              </div>
+              <!-- عنوان البطاقة -->
+              <h5 class="card-title">التـدريب المتخصص</h5>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Additional Hidden Cards -->
+        <div class="col-md-4 card-item d-none">
+          <div class="card border-0 shadow-sm p-3">
+            <a href="{% url 'services4' %}" class="card-link">
+            <div class="card-icon">
+              <i class="bi bi-router" style="color: #ffa31a;"></i>
+            </div>
+            <h5 class="card-title">إنشاء مستودعات البيانات</h5>
+          </div>
+        </a>
+        </div>
+        <div class="col-md-4 card-item d-none">
+          <div class="card border-0 shadow-sm p-3">
+            <a href="{% url 'services5' %}" class="card-link">
+            <div class="card-icon">
+              <i class="bi bi-code-slash" style="color: #ffa31a;"></i>
+            </div>
+            <h5 class="card-title">الاستشارات التقنية والدراسات</h5>
+          </div>
+        </a>
+        </div>
+        <div class="col-md-4 card-item d-none">
+          <div class="card border-0 shadow-sm p-3">
+            <a href="{% url 'services6' %}" class="card-link">
+            <div class="card-icon">
+              <i class="bi bi-cloud" style="color: #ffa31a;"></i>
+            </div>
+            <h5 class="card-title">التدقيق والفحص التكنولوجي</h5>
+          </div>
+        </a>
+        </div>
+        <div class="col-md-4 card-item d-none">
+          <div class="card border-0 shadow-sm p-3">
+            <a href="{% url 'services7' %}" class="card-link">
+            <div class="card-icon">
+              <i class="bi bi-database" style="color: #ffa31a;"></i>
+            </div>
+            <h5 class="card-title">بناء وتنفيذ المشاريع الرقمية</h5>
+          </div>
+        </a>
+        </div>
+        <div class="col-md-4 card-item d-none">
+          <div class="card border-0 shadow-sm p-3">
+            <a href="{% url 'services8' %}" class="card-link">
+            <div class="card-icon">
+              <i class="bi bi-lightning" style="color: #ffa31a;" ></i>
+            </div>
+            <h5 class="card-title">تسويق رقمي شامل</h5>
+          </div>
+        </a>
+        </div>
+        <div class="col-md-4 card-item d-none">
+          <div class="card border-0 shadow-sm p-3">
+            <a href="{% url 'services9' %}" class="card-link">
+            <div class="card-icon">
+              <i class="bi bi-broadcast" style="color: #ffa31a;"></i>
+            </div>
+            <h5 class="card-title">خدمات متكاملة في الذكاء الاصطناعي</h5>
+          </div>
+        </a>
+        </div>
+        <!-- Add more cards as needed -->
+      </div>
+      <button id="viewMoreBtn" class="btn btn-primary mt-4">View More</button>
+    </div>
+    <!--our work-->
+    <section class="about-section py-5" id="work">
+      <div class="container">
+          <div class="text-center mb-4">
+              <h2 class="fw-bold">تعلم المزيد عن اعمالنا</span></h2>
+          </div>
+          <div class="row align-items-center">
+              <!-- الجزء الأيمن (كان يسارًا سابقًا) -->
+              <div class="col-lg-6">
+                  <div class="row g-4">
+                      <div class="col-md-6 text-center">
+                          <div>
+                              <i class="bi bi-briefcase-fill icon"></i>
+                              <h5 class="fw-bold mt-3">مع المصارف</h5>
+                              <p class="text-muted">حلولاً متكاملة في مجال الأمن السيبراني وأنظمة الدفع الإلكتروني</p>
+                          </div>
+                      </div>
+                      <div class="col-md-6 text-center">
+                          <div>
+                              <i class="bi bi-gem icon"></i>
+                              <h5 class="fw-bold mt-3">مع شركات النفط </h5>
+                              <p class="text-muted">أنظمة تقنية لإدارة البيانات وتحليلها </p>
+                          </div>
+                      </div>
+                      <div class="col-md-6 text-center">
+                          <div>
+                              <i class="bi bi-wifi icon"></i>
+                              <h5 class="fw-bold mt-3"> عبر الانترنت</h5>
+                              <p class="text-muted"> خدمات متقدمة في إنشاء مواقع إلكترونية، التجارة الإلكترونية، والحلول السحابية</p>
+                          </div>
+                      </div>
+                      <div class="col-md-6 text-center">
+                          <div>
+                              <i class="bi bi-easel icon"></i>
+                              <h5 class="fw-bold mt-3"> مع الشركات الخاصة</h5>
+                              <p class="text-muted"> تطوير منصات وتطبيقات مبتكرة </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 mb-4" style="direction: rtl; line-height: 5;">
+                  <h3 class="fw-bold">الاعمال المستهدفة في شركتنا</h3>
+                  <h6>
+                    "في عالم يتسارع فيه التطور التكنولوجي بشكل مذهل، نكرّس جهودنا في شركتنا لتقديم حلول تقنية مبتكرة تُحدث فرقًا حقيقيًا في حياة عملائنا وأعمالهم. نفخر بقدرتنا على الدمج بين الإبداع والمعرفة العميقة لنصمم حلولًا مخصصة تلبي احتياجات كل عميل على حدة. من تطوير البرمجيات الذكية والتطبيقات الحديثة إلى توفير خدمات التحول الرقمي، نعمل بشغف على تمكين الشركات والأفراد من استغلال الإمكانات الكاملة للتكنولوجيا. كل مشروع ننجزه يعكس التزامنا بالجودة، ودقتنا في التفاصيل، ورؤيتنا المستقبلية. نحن هنا لنرتقي بأعمالك إلى آفاق جديدة من النجاح، ولنبني معًا مستقبلًا قائمًا على الابتكار والإبداع."
+                  </h6>
+              </div>
+          </div>
+      </div>
+  <div class="circular-progress">
+    <div class="container">
+        <div class="progress-circle" id="circle-partner" data-value="{{ progress.partner }}" data-label="شريك"></div>
+        <div class="progress-circle" id="circle-employee" data-value="{{ progress.employee }}" data-label="موظف"></div>
+        <div class="progress-circle" id="circle-client" data-value="{{ progress.client }}" data-label="عميل"></div>
+        <div class="progress-circle" id="circle-job" data-value="{{ progress.job }}" data-label="عمل"></div>
+    </div>
+ </div>
+</section>
+        
+
+
+
+
+
+<!-- index.html -->
+<div style="background: url('/static/image/home1.jpg') no-repeat center center fixed; background-size: cover; padding: 50px;">
+  <div class="container">
+      <h2 style="text-align: center; color: white;">الأخبار</h2>
+      <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+          
+          <!-- النقاط أسفل الكاروسيل -->
+          <div class="carousel-indicators">
+              {% for news in news_items %}
+                  <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
+              {% endfor %}
+          </div>
+
+          <!-- محتوى الكاروسيل -->
+          <div class="carousel-inner text-center" style="max-width: 800px; margin: auto; background: rgba(0, 0, 0, 0.7); padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);">
+              {% for news in news_items %}
+                  <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                      <img src="{{ news.image.url }}" alt="News Image" class="rounded-circle mb-3" style="width: 100px;">
+                      <h5 style="color: white;">{{ news.name }}</h5>
+                      <p style="color: white;">{{ news.job_title }}</p>
+                      <div style="color: gold; font-size: 1.2rem;">
+                          {% for i in news.stars %}
+                              <span>★</span>
+                          {% endfor %}
+                      </div>
+                      <p style="color: white; font-style: italic;">{{ news.description }}</p>
+                      <p style="color: white;">تاريخ النشر: {{ news.publish_date|date:"d-m-Y" }}</p>
+                      <p><a href="{{ news.link }}" class="btn btn-warning" target="_blank" style="color: white; text-decoration: none;">اقرأ المزيد</a></p>
+                  </div>
+              {% endfor %}
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="gallery-container" id="gallery">
+  <div class="gallery-header">
+    <h2> الـمـعرض</h2>
+    <p>يقدم هذا المعرض لمحة عن بيئة العمل حيث نخلق جوًا مفعمًا بالابتكار والتعاون استمتع برؤية مساحاتنا وأجوائنا </p>
+  </div>
+
+  <!-- الكاروسيل -->
+  <div class="carousel">
+    <div class="carousel-images">
+      <div class="gallery-item">
+        <img src="{% static 'image/231.jpg' %}" alt="Image 1">
+      </div>
+      <div class="gallery-item">
+        <img src="{% static 'image/232.jpg' %}" alt="Image 2">
+      </div>
+      <div class="gallery-item">
+        <img src="{% static 'image/233.jpg' %}" alt="Image 3">
+      </div>
+      <div class="gallery-item">
+        <img src="{% static 'image/234.jpg' %}" alt="Image 4">
+      </div>
+      <div class="gallery-item">
+        <img src="{% static 'image/235.jpg' %}" alt="Image 5">
+      </div>
+      <div class="gallery-item">
+        <img src="{% static 'image/23.jpg' %}" alt="Image 5">
+      </div>
+      <div class="gallery-item">
+        <img src="{% static 'image/237.jpg' %}" alt="Image 5">
+      </div>
+      <div class="gallery-item">
+        <img src="{% static 'image/238.jpg' %}" alt="Image 5">
+      </div>
+      <!-- يمكنك إضافة المزيد من الصور بنفس الشكل -->
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="container" id="depar">
+  <div class="section" class="se1">
+    <!-- الدائرة مع الأيقونة -->
+    <div class="circle-icon">
+      <i class="fas fa-laptop-code"></i>
+    </div>
+    <!-- الخط الأفقي -->
+    <div class="line"></div>
+    <!-- العناوين والنصوص -->
+    <h1>اقسام الشركة</h1>
+    <p>قمنا بتقسيم شركتنا إلى عدة أقسام متخصصة لضمان تقديم أفضل الخدمات الممكنة.</p>
+    <!-- المربعات -->
+    <div class="sections">
+      <div class="section-box">
+        <p>الموارد البشرية</p>
+      </div>
+      <div class="section-box">
+        <p>الشؤون القانونية</p>
+      </div>
+      <div class="section-box">
+        <p>الإدارة</p>
+      </div>
+    </div>
+    <!-- زر "المزيد" أسفل المربعات -->
+    <div class="view-more">
+      <a href="{% url 'depar' %}" class="more-btn">المزيد</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- إضافة الفئة bg-image هنا -->
+<div class="bg-image">
+  <div class="text-center mb-5">
+    <h2 style="color: #383838;">فريق العمل</h2>
+    <p>نقدم لك نخبة من الخبراء</p>
+  </div>
+
+  <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      {% for group in team_groups %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+          <div class="container-fluid">
+            <div class="row justify-content-center">
+              {% for member in group %}
+                <div class="col-md-3 text-center mb-4">
+                  <img src="{{ member.image.url }}" class="team-member-image img-fluid" alt="{{ member.name }}">
+                  <h5>{{ member.name }}</h5>
+                  <p>{{ member.role }}</p>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <!-- Controls -->
+    <button class="carousel-control-prev custom-control" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">السابق</span>
+    </button>
+    <button class="carousel-control-next custom-control" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">التالي</span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<footer class="footer">
+    <div class="container">
+      <div class="row">
+        <!-- القسم الأيمن: معلومات عن الشركة -->
+        <div class="col-md-4 footer-about">
+          <h4>عن الشركة</h4>
+          <p>
+            نحن في شركة <b>التقنيات الثلاثة</b> نسعى لتقديم أحدث الحلول التقنية لضمان نجاح عملائنا.
+            هدفنا هو الابتكار والتميز في مجال التكنولوجيا.
+          </p>
+        </div>
+        <!-- القسم الأوسط: روابط سريعة -->
+        <div class="col-md-4 footer-links text-center">
+          <h4>روابط مفيدة</h4>
+          <ul class="footer-nav">
+            <li><a href="#about">عنا</a></li>
+            <li><a href="#services">الخدمات</a></li>
+            <li><a href="#gallery">المعرض</a></li>
+            <li><a href="#contact">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <!-- القسم الأيسر: معلومات التواصل -->
+        <div class="col-md-4 footer-contact text-end">
+          <h4>تواصل معنا</h4>
+          <ul class="contact-info">
+            <li><i class="fas fa-map-marker-alt"></i> العنوان: طرابلس، ليبيا</li>
+            <li><i class="fas fa-phone"></i> الهاتف: +218-23-12347767</li>
+            <li><i class="fas fa-envelope"></i> البريد: info@3tec.com</li>
+          </ul>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/apple"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- النص السفلي -->
+      <div class="footer-bottom text-center">
+        <p>© 2024 جميع الحقوق محفوظة - شركة التقنيات الثلاثة</p>
+      </div>
+    </div>
+  </footer>
+  <script src="{% static 'js/index1.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            padding-bottom: 30px;
+        }
+        .dashboard-header {
+            padding: 20px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+        }
+        .dashboard-header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .dashboard-table {
+            margin: 20px auto;
+            max-width: 90%;
+        }
+        .logout-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .team-member img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+        .progress-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: relative;
+            margin: 20px;
+            background-color: #f3f3f3;
+        }
+        .progress-circle .progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: conic-gradient(#007bff calc(var(--progress) * 1%), #f3f3f3 calc(var(--progress) * 1%));
+            border-radius: 50%;
+        }
+        .progress-circle .label {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-header">
+        <h1>لوحة التحكم</h1>
+        <a href="{% url 'logout' %}" class="btn btn-danger logout-btn">تسجيل الخروج</a>
+    </div>
+    
+    <!-- لوحة عرض المستخدمين -->
+    <div class="dashboard-table">
+        <table class="table table-striped table-hover">
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>
+                        <a href="{% url 'delete_user' user.id %}" class="btn btn-sm btn-danger">حذف</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- أعضاء الفريق -->
+    <div class="container">
+        <h2>أعضاء الفريق</h2>
+        <a href="{% url 'add_team_member' %}" class="btn btn-primary mb-3">إضافة عضو جديد</a>
+
+        <div class="row">
+            {% for member in members %}
+            <div class="col-md-4 mb-4">
+                <div class="text-center">
+                    <div class="team-member">
+                        <img src="{{ member.image.url }}" alt="{{ member.name }}" class="team-img mb-3">
+                        <h3>{{ member.name }}</h3>
+                        <p>{{ member.role }}</p>
+                        <a href="{% url 'delete_team_member' member.id %}" class="btn btn-danger">حذف</a>
+                    </div>  
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- إدارة الأخبار -->
+    <div class="container">
+        <h2>إدارة الأخبار</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>الصورة</th>
+                            <th>الاسم</th>
+                            <th>الوظيفة</th>
+                            <th>التقييم</th>
+                            <th>التاريخ</th>
+                            <th>الرابط</th>
+                            <th>الوصف</th>
+                            <th>إجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for news in news_items %}
+                        <tr>
+                            <td><img src="{{ news.image.url }}" alt="News Image" class="rounded-circle" style="width: 50px;"></td>
+                            <td>{{ news.name }}</td>
+                            <td>{{ news.job_title }}</td>
+                            <td>{{ news.full_stars }}{{ news.empty_stars }}</td>
+                            <td>{{ news.publish_date|date:"d-m-Y" }}</td>
+                            <td><a href="{{ news.link }}" target="_blank" class="btn btn-link">المزيد</a></td>
+                            <td>{{ news.description|slice:":100" }}...</td>
+                            <td><a href="{% url 'delete_news_item' news.id %}" class="btn btn-danger">حذف</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <a href="{% url 'add_news_item' %}" class="btn btn-primary">إضافة خبر جديد</a>
+    </div>
+
+    <!-- الدوائر البيانية -->
+    <div class="container">
+        <h2>الدوائر البيانية</h2>
+        <div class="circular-progress">
+            <div class="progress-circle" id="circle-partner" data-value="{{ progress.partner }}" data-label="شريك">
+                <div class="progress-bar" style="--progress: {{ progress.partner }}"></div>
+                <div class="label">شريك</div>
+            </div>
+            <div class="progress-circle" id="circle-employee" data-value="{{ progress.employee }}" data-label="موظف">
+                <div class="progress-bar" style="--progress: {{ progress.employee }}"></div>
+                <div class="label">موظف</div>
+            </div>
+            <div class="progress-circle" id="circle-client" data-value="{{ progress.client }}" data-label="عميل">
+                <div class="progress-bar" style="--progress: {{ progress.client }}"></div>
+                <div class="label">عميل</div>
+            </div>
+            <div class="progress-circle" id="circle-job" data-value="{{ progress.job }}" data-label="عمل">
+                <div class="progress-bar" style="--progress: {{ progress.job }}"></div>
+                <div class="label">عمل</div>
+            </div>
+        </div>
+
+        <a href="{% url 'update_progress' %}" class="btn btn-primary">تحديث القيم</a>
+    </div>
+
+    <!-- في pages/dashboard.html -->
+    <table>
+        <thead>
+            <tr>
+                <th>الاسم</th>
+                <th>البريد الإلكتروني</th>
+                <th>الموضوع</th>
+                <th>الرسالة</th>
+                <th>الإجراء</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for msg in contact_messages %}
+            <tr>
+                <td>{{ msg.name }}</td>
+                <td>{{ msg.email }}</td>
+                <td>{{ msg.subject }}</td>
+                <td>{{ msg.message }}</td>
+                <td>
+                    <form action="{% url 'delete_message' msg.id %}" method="post" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">حذف</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

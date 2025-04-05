@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Cairo", serif;
+    background-color: #fff;
+    direction: rtl; /* لتوجيه النصوص من اليمين لليسار */
+    margin-top: 80px; /* لتوفير مساحة كافية من الأعلى أسفل النيفبار */
+}
+
+/* تنسيق النيفبار العلوي */
+.navbar-custom {
+    background-color: #383838;
+    display: flex;
+    justify-content: space-between; /* توزيع العناصر بالتساوي */
+    align-items: center; /* توسيط العناصر عموديًا */
+    padding: 1em;
+    position: fixed; /* لتثبيت الشريط في أعلى الصفحة */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* ضمان ظهور الشريط فوق المحتوى */
+}
+
+.navbar-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffa31a;
+}
+
+.navbar-home-link {
+    display: flex; /* لجعل الأيقونة والنص بجانب بعضهما */
+    align-items: center;
+    font-size: 1.2em;
+    color: #ffa31a;
+    text-decoration: none;
+    gap: 10px; /* مسافة بين الأيقونة والنص */
+}
+
+.navbar-home-link:hover {
+    color: #ffffff; /* تغيير اللون عند التمرير */
+}
+
+/* تنسيق الحاوية الرئيسية */
+.container {
+    display: flex;
+    justify-content: center;  /* لتوسيط المحتوى أفقيًا */
+    align-items: center;      /* لتوسيط المحتوى عموديًا */
+    gap: 30px; /* المسافة بين الفيديو والنص */
+    width: 80%;
+    height: 80vh; /* تحديد ارتفاع الحاوية */
+}
+
+/* الجزء الأيسر (الفيديو) */
+.left-section {
+    display: flex;
+    justify-content: center; /* توسيط الفيديو أفقيًا */
+    align-items: center;     /* توسيط الفيديو عموديًا */
+    flex: 1;
+}
+
+.video {
+    width: 100%;
+    max-width: 550px; /* الحد الأقصى لحجم الفيديو */
+    border-radius: 5px;
+}
+
+/* الجزء الأيمن (النص) */
+.right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* توسيط النص عموديًا */
+    align-items: flex-start; /* محاذاة النص إلى اليسار */
+    text-align: right;
+    padding: 20px;
+    flex: 1;
+}
+
+.right-section h1 {
+    font-size: 32px;
+    color: #ffa31a;
+    margin-bottom: 20px;
+}
+
+.right-section p {
+    font-size: 18px;
+    color: #555;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.color-button {
+    background-color: #ffa31a;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.color-button:hover {
+    background-color: #555;
+}
+
+.color-button:active {
+    background-color: #383838;
+}

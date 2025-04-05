@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- تضمين مكتبة Font Awesome -->
+    <title>صفحة نص وفيديو</title>
+    <link rel="stylesheet" href="{% static 'css/page.css' %}">
+</head>
+<body>
+    <!-- شريط التنقل العلوي -->
+    <nav class="navbar-custom">
+        <div class="navbar-title">3-Thc</div>
+        <a href="{% url 'index' %}" class="navbar-home-link">
+            <i class="fas fa-home"></i> الصفحة الرئيسية
+        </a>
+    </nav>
+    <div class="container">
+        <div class="left-section">
+            <video class="video" autoplay muted loop>
+                <source src="{% static 'image/funny.mp4' %}" type="video/mp4">
+            </video>
+        </div>
+            <div class="right-section">
+                <h1>تـطويـر و تـصميم الأنـظمة البـرمجية</h1>
+                <p>تـقديم حـلول برمـجية مـتكاملة تـشمل تـطوير مواقع الـويب مواقع الويـب , تـطبيقات الـهواتف الدكية , وأنـظمة التحكم الألي المخصصة لتلـبية احتياجات القطاعـات المختلفة مُل المصارف, شركـات التأمين , قطاع النفط , المؤسسات التعليمية ,والخـدمية العامة و الخـاصة</p>
+                <div class="button-container">
+                    <button class="color-button">للإستفسار تواصل معنا</button>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,706 @@
+ /* إزالة القيم الافتراضية */
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* إعدادات الخطوط */
+body {
+    color: #555;
+    font-family: "Cairo", serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+#tech-title {
+    color: #FFA31A;
+    font-weight: bold;
+    font-size: 80px;
+     }
+#secondary-title {
+    font-weight: bold;
+}
+.custom-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* أزرار */
+.primary-text {
+    color: #ffa31a;
+}
+
+.custom-btn-primary, .custom-btn-secondary {
+    display: inline-block;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 15px;
+}
+
+.custom-btn-primary {
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: transparent; 
+    margin-top: 20px;
+}
+
+.custom-btn-secondary {
+    color: #fff;
+    background: #383838;
+    margin-top: 2rem;
+}
+
+.custom-btn-primary:hover,
+.custom-btn-secondary:hover {
+    background: #ffa31a;
+}
+
+/* تخصيص الهيدر */
+.custom-header {
+    height: 100vh;
+    background: url("/static/image/home1.jpg") center center/cover no-repeat;
+    position: relative;
+}
+
+/* الظل */
+.custom-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+/* تأكيد أن محتوى الهيدر فوق الظل */
+.custom-header .custom-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* تخصيص Navbar */
+/* تخصيص Navbar */
+.navbar {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    direction: rtl;
+    background-color: transparent; /* خلفية شفافة */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* تأثير الانتقال لتغيير الخلفية والظل */
+    box-shadow: none; /* بدون ظل عند البداية */
+    font-family: inherit; /* تثبيت نوع الخط */
+    font-size: inherit; /* تثبيت حجم الخط */
+    font-weight: inherit; /* تثبيت وزن الخط */
+    color: inherit; /* تثبيت اللون */
+}
+
+/* تأثير عند التمرير لتثبيت النيف بار */
+.navbar.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* خلفية مظللة عند التمرير */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* إضافة ظل */
+}
+
+/* تخصيص أزرار الـ nav */
+.navbar-nav .nav-link {
+    padding: 15px 20px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem; /* تثبيت حجم الخط */
+    transition: border-bottom 0.3s ease; /* تأثير انتقالي للحد السفلي فقط */
+}
+
+.navbar-nav .nav-link:hover {
+    border-bottom: 2px solid #ffa31a;
+}
+
+/* تخصيص الـ content في الـ header */
+.custom-header .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+/* تخصيص زر القائمة */
+.navbar-toggler {
+    margin-left: auto; /* يدفع الزر إلى أقصى اليمين */
+    margin-right: 10px; /* إضافة مسافة صغيرة من الحافة اليمنى */
+    order: 1; /* للتأكد من ظهوره على اليمين في Flexbox */
+}
+
+.custom-header .content h1 {
+    font-size: 40px;
+    color: #fff;
+    line-height: 1.6; /* مسافة بين السطور */
+    margin-bottom: 30px;
+}
+
+
+/* تخصيص for About */
+#about {
+    display: flex;
+    justify-content: center;
+    direction: rtl;
+    align-items: center;
+    background: #fff;
+}
+
+#about .title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+#about h2 {
+    font-size: 40px;
+    color: #383838;
+    margin-bottom: 20px;
+}
+
+#about .title p {
+    font-size: 14px;
+    color: #9a9a9a;
+    font-weight: 400;
+}
+
+#about .about-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-item {
+    padding: 5px;
+}
+
+#about .about-content p {
+    font-weight: 500;
+    color: #9a9a9a;
+    margin-left: 7rem;
+    line-height: 1.6;
+    font-size: 16px;
+}
+/* Align dropdown menu to the right on smaller screens */
+@media (max-width: 992px) { /* Adjust this value based on when the menu collapses */
+    .navbar-collapse {
+        background-color: rgb(85, 83, 83); /* Background color */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        max-width: 300px; /* Set desired width for collapsed menu */
+        width: 80%; /* Adjust width as needed */
+        margin: 0 auto; /* Centers the navbar-collapse within the container */
+        border-radius: 8px; /* Optional: adds rounded corners */
+    }
+    
+    /* Force button (toggle) to appear on the right */
+    .navbar-toggler {
+        margin-left: auto; /* Pushes the button to the right */
+        margin-right: 10px; /* Optional: add space to the right edge */
+    }
+    
+    /* Align text and elements properly */
+    .col-12.col-md-6 {
+        justify-content: flex-start !important; /* Force left alignment on smaller screens */
+        text-align: right !important; /* Align text to the right */
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-header .content h1 {
+        font-size: 30px;
+    }
+
+    #about .about-content {
+        flex-direction: column;
+    }
+
+    #about .about-content p {
+        margin-left: 0;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+/* تخصيص الشريط المتحرك */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+}
+
+.carousel {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-images img {
+    width: 100%; /* تعديل الصورة لتملأ عرض الشريط */
+    height: auto; /* لضمان أن الصورة لا تكون مشوهة */
+    margin-right: 0; /* إزالة التباعد بين الصور */
+}
+
+/* تعديل أزرار التمرير */
+button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 150px;
+    gap: 10px;
+    padding: 20px;
+}
+
+.image {
+    position: relative;
+    background-color: #ddd;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.image:hover {
+    background-color: #ff4081;
+    transform: scale(1.05);
+}
+
+/* Image Sizes */
+#img1 { 
+    background-image: url("/static/image/3t9.jpg"); 
+    grid-column: span 2; 
+    grid-row: span 1; 
+}  /* Large */
+
+#img2 { 
+    background-image: url("/static/image/3t7.jpg"); 
+    grid-column: span 1; 
+    grid-row: span 2; 
+}  /* Tall */
+
+#img3 { 
+    background-image: url("/static/image/3t6.jpg"); 
+    grid-column: span 1; 
+    grid-row: span 1; 
+}  /* Small */
+
+#img4 { 
+    background-image: url("/static/image/3t4.jpg"); 
+    grid-column: span 2; 
+    grid-row: span 1; 
+}  /* Wide */
+
+#img5 { 
+    background-image: url("/static/image/3t3.jpg"); 
+    grid-column: span 1; 
+    grid-row: span 1; 
+}  /* Small */
+
+#img6 { 
+    background-image: url("/static/image/3t2.jpg"); 
+    grid-column: span 1; 
+    grid-row: span 1; 
+}  /* Small */
+
+#img7 { 
+    background-image: url("/static/image/3t1.jpg"); 
+    grid-column: span 2; 
+    grid-row: span 1; 
+}  /* Wide */
+
+#img8 { 
+    background-image: url("/static/image/3t10.jpg"); 
+    grid-column: span 1; 
+    grid-row: span 2; 
+}  /* Tall */
+
+/*اعمالنا*//* تنسيق الحاوية الأساسية للعداد */
+.circular-progress {
+    margin-bottom: 50px;
+    margin-top: 0px;
+    font-family: cairo ;
+    font-size: 15px;
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  .circular-progress .container {
+    margin-top: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .circular-progress .progress-circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+  }
+  
+  .circular-progress .progress-circle::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #e6e6e6;
+    z-index: 1;
+  }
+  
+  .circular-progress .progress-circle .value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 2;
+  }
+  
+  .circular-progress .progress-circle .label {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    z-index: 2;
+  }
+  
+  .circular-progress .progress-circle svg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+    z-index: 3;
+  }
+  
+  .circular-progress .progress-circle circle {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+  }
+  
+  .circular-progress .progress-circle circle.background {
+    stroke: #dcdcdc;
+  }
+  
+  .circular-progress .progress-circle circle.foreground {
+    stroke: #ffa31a;
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    transition: stroke-dashoffset 1s linear;
+  }
+  
+  
+/* تنسيق قسم الخدمات */
+.card {
+    display: block !important; /* تأكيد ظهور الكرت */
+    visibility: visible !important; /* تأكيد أنه ليس مخفيًا */
+    opacity: 1 !important; /* تأكيد الظهور */
+    transition: transform 0.3s ease; /* تأثير التحريك داخل الكرت */
+    background-color: #e7e7e7;
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* تكبير الكرت عند تحريك المؤشر */
+    background-color: #c5c5c5;
+  }
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #383838;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 24px;
+  }
+  
+  .card-title {
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .card-text {
+    text-align: center;
+    color: #6c757d;
+  }
+  #viewMoreBtn {
+    all: unset; /* إزالة الأنماط الافتراضية */
+    display: inline-block; /* السماح للزر بأن يأخذ حجمه الطبيعي */
+    margin: 30px auto; /* تباعد من الأعلى والأسفل، والمركز التام */
+    padding: 10px 20px; /* مساحة داخلية لتحديد حجم الزر */
+    background-color: rgb(58, 58, 58); /* لون الخلفية */
+    color: #fff; /* لون النص */
+    border-radius: 10px; /* زوايا مستديرة */
+    font-size: 16px; /* حجم النص */
+    text-align: center; /* محاذاة النص */
+    position: relative; /* تحديد الموقع النسبي */
+    left: 50%; /* محاذاة الزر في المنتصف */
+    transform: translateX(-50%); /* محاذاة دقيقة للمنتصف */
+  }
+  
+  #viewMoreBtn:hover {
+    background-color: #ffa31a; /* تغيير اللون عند التمرير */
+  }  
+
+  
+  .card-link {
+    text-decoration: none; 
+    color: inherit; 
+    display: block; 
+  }
+
+  .card-link:hover {
+    text-decoration: none; /* تأكيد عدم وجود خط عند التمرير */
+    color: inherit; /* الحفاظ على اللون عند التمرير */
+  }
+
+.image-banner {
+    position: relative;
+    width: 100%; /* عرض كامل */
+    height: 400px; /* زيادة ارتفاع الفيديو */
+    overflow: hidden;
+    margin-top: 0 !important; /* إزالة المسافة بين الفيديو والصورة أسفله */
+    padding: 0; /* إزالة أي حشو */
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%; /* العرض يبقى كاملًا */
+    height: 100%; /* جعل الفيديو يغطي 100% من الحاوية */
+    object-fit: cover; /* جعل الفيديو يغطي المساحة بالكامل */
+    object-position: center center; /* تحديد مركز الفيديو */
+    transform: translateX(-50%);
+    z-index: -1; /* وضع الفيديو تحت النص */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* الظل الداكن */
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 0; /* إزالة الحشو */
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+.team-carousel .carousel-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.team-member {
+    text-align: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.team-member img {
+    max-width: 100%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-carousel .carousel-inner {
+    display: flex;
+}
+
+.team-carousel .carousel-item {
+    flex: 0 0 100%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+@media (min-width: 768px) {
+    .team-carousel .carousel-item {
+        flex: 0 0 50%; /* اثنين في العرض */
+    }
+}
+
+@media (min-width: 992px) {
+    .team-carousel .carousel-item {
+        flex: 0 0 33.333%; /* ثلاثة في العرض */
+    }
+}
+
+.footer {
+    background-color: #3d3d3d; /* لون الخلفية */
+    color: #fff; /* لون النص */
+    padding: 40px 20px;
+    font-family: 'Cairo', sans-serif;
+      }
+      
+.footer h4 {
+    color: #ffa31a; /* لون العناوين */
+    margin-bottom: 20px;
+      }
+      
+.footer p,
+.footer ul {
+    margin: 0;
+    padding: 0;
+      }
+      
+.footer-about {
+    text-align: right; /* جعل النصوص تصطف على اليمين */
+    direction: rtl; /* تحديد الاتجاه من اليمين إلى اليسار */
+      }
+      
+.footer-about p {
+    font-size: 14px;
+    line-height: 1.6;
+      }
+      
+.footer-nav {
+    list-style: none;
+    text-align: center;
+      }
+      
+.footer-nav li {
+    margin-bottom: 10px;
+      }
+      
+.footer-nav a {
+    color: #fff; /* لون الروابط */
+    text-decoration: none;
+    font-size: 15px;
+      }
+      
+.footer-nav a:hover {
+    text-decoration: underline;
+    color: #ffa31a;
+      }
+      
+      
+.footer-contact {
+    text-align: left; /* نصوص التواصل تصطف لليسار */
+      }
+      
+.footer-contact .contact-info {
+    list-style: none;
+      }
+      
+.footer-contact .contact-info li {
+    margin-bottom: 10px;
+    font-size: 14px;
+      }
+      
+.footer-contact .contact-info i {
+    margin-right: 10px;
+    color: #f3c614;
+      }
+      
+.social-icons a {
+    display: inline-block;
+    margin: 0 5px;
+    color: #ffa31a; /* لون الأيقونات */
+    font-size: 18px;
+    transition: 0.3s;
+      }
+      
+.social-icons a:hover {
+    color: #fff; /* تغيير اللون عند التمرير */
+      }
+      
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 2px solid #555;
+    padding-top: 10px;
+    font-size: 14px;
+      }
+      
+      .icon {
+        color: #ffa31a;
+        font-size: 2rem;
+    }
+    
+    .text-muted {
+        font-size: 0.9rem;
+    }  
+  .py-5{
+    
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+  }
+ 

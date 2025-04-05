@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- ربط ملف الـ CSS الخارجي -->
+    <link rel="stylesheet" href="{% static 'css/history.css' %}">
+    <title>About</title>
+</head>
+<body>
+
+    <nav class="navbar-custom">
+        <div class="navbar-title">المــسـيـرة الـمهـنيـة</div>
+        <a href="{% url 'index' %}" class="navbar-home-link">
+            <i class="fas fa-home"></i> الصفحة الرئيسية
+
+        </a>
+    </nav>
+
+    <!-- Timeline -->
+    <div class="timeline container py-5">
+        <!-- خط زمني عمودي -->
+        <div class="timeline-line"></div>
+
+        <!-- Timeline Item 1 -->
+        <div class="row timeline-item">
+            <div class="col-12 col-md-5 text-center">
+                <img src="{% static 'image/create.jpg' %}" alt="تاريخ 1" class="img-fluid">
+            </div>
+            <div class="col-12 col-md-7">
+                <div class="content">
+                    <h3>العام 2010</h3>
+                    <p>تأسيس الشركة وبدء العمل على تطوير حلول البرمجيات المخصصة.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="row timeline-item">
+            <div class="col-12 col-md-5 text-center">
+                <img src="{% static 'image/2.jpg' %}" alt="تاريخ 2" class="img-fluid">
+            </div>
+            <div class="col-12 col-md-7">
+                <div class="content">
+                    <h3>العام 2013</h3>
+                    <p>إطلاق أول منتج برمجي ناجح في السوق المحلي.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="row timeline-item">
+            <div class="col-12 col-md-5 text-center">
+                <img src="{% static 'image/companyb.jpg' %}" alt="تاريخ 3" class="img-fluid">
+            </div>
+            <div class="col-12 col-md-7">
+                <div class="content">
+                    <h3>العام 2015</h3>
+                    <p>التوسع في الأسواق العالمية وفتح أول فرع خارجي في دبي.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Item 4 -->
+        <div class="row timeline-item">
+            <div class="col-12 col-md-5 text-center">
+                <img src="{% static 'image/aii.jpg' %}" alt="تاريخ 4" class="img-fluid">
+            </div>
+            <div class="col-12 col-md-7">
+                <div class="content">
+                    <h3>العام 2018</h3>
+                    <p>إطلاق منصة الذكاء الاصطناعي لدعم الأعمال التجارية المتقدمة.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Item 5 -->
+        <div class="row timeline-item">
+            <div class="col-12 col-md-5 text-center">
+                <img src="{% static 'image/cloud.jpg' %}" alt="تاريخ 5" class="img-fluid">
+            </div>
+            <div class="col-12 col-md-7">
+                <div class="content">
+                    <h3>العام 2021</h3>
+                    <p>التوسع في مشاريع البرمجيات الذكية والخدمات السحابية المتكاملة.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

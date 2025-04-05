@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحديث الدوائر البيانيه</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Cairo', sans-serif;
+        }
+        .dashboard-header {
+            padding: 20px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .dashboard-header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .container {
+            max-width: 800px;
+            margin-top: 30px;
+        }
+        .form-label {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .form-control {
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .btn {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-header">
+        <h1>تحديث الدوائر البيانيه</h1>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="partner" class="form-label">الشريك:</label>
+                    <input type="number" name="partner" class="form-control" value="{{ progress.partner }}" id="partner">
+                </div>
+                <div class="mb-3">
+                    <label for="employee" class="form-label">الموظف:</label>
+                    <input type="number" name="employee" class="form-control" value="{{ progress.employee }}" id="employee">
+                </div>
+                <div class="mb-3">
+                    <label for="client" class="form-label">العميل:</label>
+                    <input type="number" name="client" class="form-control" value="{{ progress.client }}" id="client">
+                </div>
+                <div class="mb-3">
+                    <label for="job" class="form-label">العمل:</label>
+                    <input type="number" name="job" class="form-control" value="{{ progress.job }}" id="job">
+                </div>
+                <button type="submit" class="btn btn-primary">تحديث</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

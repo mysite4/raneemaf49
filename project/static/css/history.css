@@ -1,0 +1,142 @@
+/* تصميم التايم لاين العام */
+body {
+    background : #fff;  /* اختر اللون الذي تريده */
+    margin: 0;  /* إزالة الهوامش الافتراضية */
+    padding: 0; /* إزالة الحشوات الافتراضية */
+}
+
+.timeline {
+    position: relative;
+    padding: 40px 0;
+}
+
+/* خط التايم لاين في المنتصف */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #ffa34f;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    position: relative;
+    animation: fadeIn 0.8s ease-out;
+    padding: 20px;
+}
+
+/* تأثير Fade In */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تنسيق الصور */
+.timeline-item img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* تنسيق النصوص */
+.timeline-item .content {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.timeline-item:nth-child(odd) .content::before {
+    left: auto;
+    right: -20px;
+    border-right-color: transparent;
+    border-left-color: #fff;
+}
+
+/* تخصيص النصوص داخل المحتوى */
+.timeline-item h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #383838;
+    font-weight: bold;
+    text-align: right;
+}
+
+.timeline-item p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: right;
+}
+
+/* تعديل توزيع العناصر من اليسار واليمين */
+.timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row;
+}
+
+/* تخصيص ألوان الخلفيات */
+.timeline-item:nth-child(odd) .content {
+    background-color: #ffa31a; /* خلفية ملونة فاتحة */
+}
+
+.timeline-item:nth-child(even) .content {
+    background-color: #ffa31a; /* خلفية صفراء */
+}
+
+.timeline-item:nth-child(odd) h3, .timeline-item:nth-child(odd) p {
+    text-align: left;
+}
+
+.timeline-item:nth-child(even) h3, .timeline-item:nth-child(even) p {
+    text-align: right;
+}
+
+/* تحسين الشريط العلوي */
+.navbar-custom {
+    background-color: #383838; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+.navbar-title {
+    font-size: 35px; /* حجم خط العنوان */
+    font-weight: bold; /* وزن الخط */
+    color: #ffa31a; /* تغيير لون النص */
+    text-align: center; /* توسيط النص */
+}
+
+.navbar-home-link {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    color: #ffa31a;
+    text-decoration: none;
+    direction: rtl;
+}
+
+.navbar-home-link i {
+    margin-right: 1.5em;
+    margin-left: 1.5em;
+    font-size: 1.5em;
+}
